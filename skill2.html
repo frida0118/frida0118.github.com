@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>skill2</title>
+	<link rel="stylesheet" href="css/base.css">
+	<script src="js/move8.js"></script>
+	<style>
+		body{background:url(img/js/back6.png) no-repeat;background-size:100%;}
+		.btn{position:absolute; top:20px; left:20px;}
+		#box{width:420px; height:300px;border:5px solid #fff; margin:100px auto;position:relative; top:50px; left:-150px; overflow:hidden;}
+		#box ul{position:absolute; top:0; left:0; height:400px; overflow:hidden;}
+		#box ul li{float:left;position:relative;}
+		#box ul li i{position:absolute; top:10px; left:10px; font-size:18px; font-family: 微软雅黑; color:#af68ab;}
+		#box ol{position:absolute; bottom:18px; width:600px; left:50%; margin-left:-170px;}
+		#box ol li{float:left; width:64px; height:16px; background:#ccc;  border-radius:7px;
+			margin:0px 10px;overflow:hidden;}
+		#box ol li span{float:left; width:0; height:16px; background:#73d9f0; border-radius:7px;}
+	</style>
+	<script>
+	window.onload = function(){
+		;(function(){
+			var oBox = document.getElementById('box');
+			var oUl = oBox.children[0];
+			var aLi = oUl.children;
+			oUl.style.width = aLi[0].offsetWidth*aLi.length+'px';
+			var aSpan = oBox.children[1].getElementsByTagName('span');
+				var iNow = 0;
+				function next(){
+					move(aSpan[iNow],{width:64},{complete:function(){
+						iNow++;
+						if(iNow == aSpan.length){
+							iNow = 0;
+						}
+						move(oUl,{left:-iNow*aLi[0].offsetWidth},{complete:function(){
+							for(var i = 0;i<aSpan.length;i++){
+								aSpan[i].style.width = 0 ;
+							}
+							next();
+						}});
+					}});
+				}
+				next();			
+		})();
+	};
+	</script>
+</head>
+<body>
+<a href="index.html" class="btn"><img src="img/js/page.png" alt="" /></a>
+<div id="box">
+	<ul>
+		<li><a href="sport.html"><img src="img/js/sport.png"><i>分页展示</i></a></li>
+		<li><a href="calendar.html"><img src="img/js/calendar.png"><i>简易日历</i></a></li>
+		<li><a href="mac.html"><img src="img/js/mac.png"><i>苹果菜单</i></a></li>
+		<li><a href="magnifier.html"><img src="img/js/magnifier.png"><i>放大镜</i></a></li>
+	</ul>
+	<ol>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+		<li><span></span></li>
+	</ol>
+</div>
+</body>
+</html>

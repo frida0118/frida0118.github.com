@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>pageTurning</title>
+<style>
+*{margin:0; padding:0;}
+body{background:url(img/bgimg.jpg) repeat;}
+.btn{position:absolute; top:30px; left:40px;}
+.box{width:700px; height:400px; margin:100px auto; background:url(img/skill3/flip1.png) no-repeat; position:relative;}
+.box .page{ position:absolute; right:0; top:0; width:50%; height:100%; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateY(0deg); -webkit-transform-origin:left; z-index:2;}
+.page div{ position:absolute; top:0; left:0; width:100%; height:100%;}
+.page .front{ background:url(img/skill3/flip1.png) no-repeat right; -webkit-transform:translateZ(1px);}
+.page .back{ background:url(img/skill3/flip2.png) no-repeat; -webkit-transform:translateZ(-1px) scale(-1,1);}
+.box .page2{ position:absolute; top:0; right:0; width:50%; height:100%; background:url(img/skill3/flip2.png) no-repeat right; z-index:1;}
+</style>
+<script>
+	window.onload=function(){
+		;(function(){
+			var oBox = document.querySelector('.box');
+			var oPage = document.querySelector('.page');
+			var oFront = document.querySelector('.front');
+			var oBack = document.querySelector('.back');
+			var oPage2 = document.querySelector('.page2');
+			var iNow = 0;
+			var bOk = false;
+			oBox.onclick=function(){
+				if(bOk)return;
+				bOk = true;
+				iNow++;
+				oPage.style.WebkitTransition = '2s all ease';
+				oPage.style.WebkitTransform = 'perspective(800px) rotateY(-180deg)';
+				function tranEnd(){
+					oPage.removeEventListener('transitionend',tranEnd,false);
+					oPage.style.WebkitTransition = 'none';
+					oBox.style.backgroundImage = 'url(img/skill3/flip'+(iNow%3+1)+'.png)';
+					oFront.style.backgroundImage = 'url(img/skill3/flip'+(iNow%3+1)+'.png)';
+					oBack.style.backgroundImage = 'url(img/skill3/flip'+((iNow+1)%3+1)+'.png)';
+					oPage2.style.backgroundImage = 'url(img/skill3/flip'+((iNow+1)%3+1)+'.png)';
+					//console.log(iNow%3+1,(iNow+1)%3+1);
+					oPage.style.WebkitTransform = 'perspective(800px) rotateY(0deg)';
+					bOk = false;
+				}
+				oPage.addEventListener('transitionend',tranEnd,false);
+				
+			};			
+		})();
+
+	};
+
+</script>
+</head>
+
+<body>
+<a href="skill3.html" class="btn"><img src="img/js/page2.png" alt="" /></a>
+<div class="box">
+	<div class="page">
+		<div class="front"></div>
+		<div class="back"></div>
+	</div>
+	<div class="page2"></div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

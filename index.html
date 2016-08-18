@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>Frida's home</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script src="js/move.js"></script>
+	<script src="js/throughWall.js"></script>
+	<script>
+	window.onload = function(){
+		;(function(){
+			var oUl = document.getElementById('port');
+			var aLi = oUl.children;
+			for(var i=0;i<aLi.length;i++){
+				through(aLi[i].children[0]);
+			}
+			//返回顶部
+			var oArw = document.getElementById('arw');
+			function addEvent(obj,sEv,fn){
+				if(obj.addEventListener){
+					obj.addEventListener(sEv,fn,false);
+				}else{
+					obj.attachEvent('on'+sEv,fn);
+				}
+			}
+			var timer = null;
+			var bSys = false;
+			window.onscroll = function(){
+				if(bSys){
+					clearInterval(timer);
+				}
+				bSys = true;
+				var sT = document.documentElement.scrollTop||document.body.scrollTop;	
+				if(sT>100){
+					oArw.style.display = 'block';
+				}else{
+					oArw.style.display = 'none';
+				}	
+			};
+			function toTop(){
+				var start = document.documentElement.scrollTop||document.body.scrollTop;	
+				var dis = 0 - start;
+				var count = Math.round(1500/30);
+				var n = 0;
+				clearInterval(timer);
+				timer = setInterval(function(){
+					bSys = false;
+					n++;
+					var a = 1- n/count;
+					var cur = start +dis*(1-Math.pow(a,3));
+					document.documentElement.scrollTop = document.body.scrollTop = cur;
+					if (n == count) {
+						clearInterval(timer);
+					}
+				},30);
+			}
+			addEvent(oArw,'click',toTop);			
+		})();
+
+	};
+	</script>
+</head>
+<body>
+<div class="warp">
+	<div class="header" id="a1">
+		<div class="nav clearfix">
+			<h1>isFRIDA</h1>
+			<ul class="clearfix">
+				<li><a href="#a1"class="color">主页</a></li>
+				<li><a href="#a2 a6">关于我</a></li>
+				<li><a href="#a3">技能</a></li>
+				<li><a href="#a4">作品展示</a></li>
+				<li><a href="#a5">联系方式</a></li>
+			</ul>
+		</div>
+		<div class="title">
+			<p class="wel">Welcome To My Web!</p>
+			<p class="meet">IT'S NICE TO MEET YOU</p>
+			<div class="read"><a href="#a6">READ MORE</a></div>
+		</div>
+	</div>
+	<!--关于我-->
+	<div class="about" id="a2">
+		<img src="img/title1.png" alt="" class="text" id="a6" />
+		<img src="img/me.png" alt="" class="photo" />
+		<p class="p1">直接的行动即使不能奏效，也富有健康的朝气。</p>
+		<span></span>
+		<p class="p2">我叫柳娜</p>
+		<p class="p2">25岁</p>
+		<p class="p2">2015年本科毕业</p>
+		<p class="p2">一名前端开发工程师</p>
+	</div>
+	<div class="picture">
+		<p class="pp1">“Youth is not a time of life; it is a state of mind; it is not a matter a ripe rosy cheeks, 
+red lips and supple knees; it is a temper of will, a quality of imagination, 
+a vigor of the emotions; it is the freshness of the deep springs of life.”</p>
+		<p class="pp2">– Samuel Ullman, Poet</p>
+	</div>
+	<!--技能-->
+	<div class="kill" id="a3">
+		<img src="img/title2.png" alt="" class="text1" />
+		<p class="p1">前端的学习需要持之以恒，知识深度与广度都很重要。而前端开发的重中之重就是原生javascript的理解，而如今的思路必须有模块化，组件</p>
+		<p class="p2">化，工程化。层出不穷的框架让人兴奋，而不同框架背后的思路却在逐渐统一。</p>
+		<ul class="clearfix">
+			<li class="left" ><img src="img/k1.png" alt=""  /></li>
+			<li><img src="img/k2.png" alt="" /></li>
+			<li><img src="img/k3.png" alt=""  /></li>
+			<li><img src="img/k4.png" alt="" /></li>
+			<li><img src="img/k5.png" alt="" /></li>
+		</ul>
+	</div>
+	<!--作品展示-->
+	<div class="port" id="a4">
+		<img src="img/title3.png" alt="" class="text2" />
+		<p class="porp_p">Kindly give me your advice.</p>
+		<ul class="clearfix" id="port">
+			<li class="li_left">
+				<div class="screen">
+					<img src="img/skill1.png" alt="" />
+					<div class="hide"><a href="skill1.html">查看更多</a></div>
+				</div>
+				<div class="caption">HTML+CSS</div>
+			</li>
+			<li>
+				<div class="screen">
+					<img src="img/skill2.png" alt="" />
+					<div class="hide"><a href="skill2.html">查看更多</a></div>
+				</div>
+				<div class="caption">JavaScript</div>
+			</li>
+			<li>
+				<div class="screen">
+					<img src="img/skill3.png" alt="" />
+					<div class="hide"><a href="skill3.html">查看更多</a></div>
+				</div>
+				<div class="caption">HTML5+CSS3</div>
+			</li>
+			<li class="li_left">
+				<div class="screen">
+					<img src="img/skill4.png" alt="" />
+					<div class="hide"><a href="skill4.html">查看更多</a></div>
+				</div>
+				<div class="caption">canvas</div>
+			</li>
+			<li>
+				<div class="screen">
+					<img src="img/fish.png" alt="" />
+					<div class="hide"><a href="fish.html">查看更多</a></div>
+				</div>
+				<div class="caption">游戏</div>
+			</li>
+			<li>
+				<div class="screen">
+					<img src="img/skill6.png" alt="" />
+					<div class="hide"><a href="skill6.html">查看更多</a></div>
+				</div>
+				<div class="caption">移动端</div>
+			</li>
+		</ul>
+	</div>
+	<!--联系方式-->
+	<div class="footer" id="a5">
+		<img src="img/title4.png" alt="" class="img1" />
+		<div class="tell clearfix">
+			<img src="img/phone.gif" class="img2">
+			<div class="right">
+				<span class="s1">135-8255-1986</span>
+				<span class="s2">Contact me soon</span>
+			</div>
+		</div>
+		<ul class="clearfix">
+			<li>
+				<img src="img/b1.png" alt=""/> 
+				<div>ln_0118@163.com</div>
+			</li>
+			<li>
+				<img src="img/b2.png" alt=""/> 
+				<div>Frida_Aa</div>
+			</li>
+			<li>
+				<img src="img/b3.png" alt=""/> 
+				<div>747246305</div>
+			</li>
+			<li>
+				<img src="img/b4.png" alt=""/> 
+				<div>na9575</div>
+			</li>
+		</ul>
+	</div>
+	<img src="img/to-top2.png" alt="" / id="arw">
+</div>	
+</body>
+</html>

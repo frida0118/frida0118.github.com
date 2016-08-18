@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>skill1</title>
+	<link rel="stylesheet" href="css/base.css">
+	<style>
+		body{background:url(img/skill1/back5.png) no-repeat;background-size:100%;}
+		.back{position:absolute; top:20px; left:20px;}
+		.box{width:600px; margin:150px auto;}
+		.div1,.div2{width:250px; height:288px; float:left;border:6px solid #fff; border-radius:20px;position:relative;} 
+		.div2{margin-left:40px;}	
+		.div1 .mls,.div2 .jd{width:250px; height:0; background:#2f6cc4; opacity:0.7; filter:alpha(opacity:70); position:absolute; bottom:0; left:0; border-radius:18px; -webkit-transition:1s all ease;}
+		.div1:hover .mls{height:288px; }
+		.div2:hover .jd{height:288px; }
+		.div1 .div1_a1{width:250px; height:40px; font-size:24px; font-family: 微软雅黑; color:#fff;  text-align:center; line-height:40px; display:block; margin-top:20px;}
+		.div2 .div2_a2{width:250px; height:40px; font-size:24px; font-family: 微软雅黑; color:#fff;  text-align:center; line-height:40px; display:block; margin-top:20px;}
+	</style>
+	<script src="js/move1.js"></script>
+	<script>
+	/*
+	window.onload=function(){
+		var aLi = document.getElementsByTagName('li');
+		var oBlock = document.getElementById('block');
+		var iNow = 0;
+		for(var i=0;i<aLi.length-1;i++){
+			aLi[i].onmouseover = function(){
+				//oBlock.style.left = this.offsetLeft+'px';
+				move(oBlock,this.offsetLeft+6);
+			};
+			aLi[i].onmouseout = function(){
+				move(oBlock,iNow*aLi[0].offsetWidth+6);
+			};
+			;(function(index){
+				aLi[i].onclick = function(){
+					iNow=index;
+				};
+			})(i);
+		}
+	};
+	*/
+	</script>
+</head>
+<body>
+	<a href="index.html" class="back"><img src="img/js/page.png" alt="" /></a>
+	<div class="box">
+		<div class="div1">
+			<a href="mls.html"><img src="img/skill1/mls1.png"></a>
+			<div class="mls"></div>
+			<a href="mls.html" class="div1_a1">美丽说官网</a>
+		</div>
+		<div class="div2">
+			<a href="jd.html"><img src="img/skill1/jd1.png">
+			<div class="jd"></div>
+			<a href="jd.html" class="div2_a2">京东官网</a>
+		</div>
+	</div>
+</body>
+</html>

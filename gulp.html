@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>gulp</title>
+	<link rel="stylesheet" href="css4/index.css" />
+	<link rel="stylesheet" href="css4/pad.css" media="(max-width:661px)" />
+	<script>
+		;(function(){
+			document.addEventListener('DOMContentLoaded',function(){
+				function change(){
+					var oHeader = document.querySelector('header');
+					oHeader.style.height = document.documentElement.clientHeight+'px';
+				}
+				change();
+				window.addEventListener('resize',change,false);
+			},false);
+		})();
+	</script>
+</head>
+<body>
+<div class="box">
+	<header>
+		<ul>
+			<li class="off"><a href="javascript:;">Docs</a></li>
+			<li><a href="javascript:;">Plugins</a></li>
+			<li><a href="javascript:;">Twitter</a></li>
+		</ul>
+		<div class="con">
+			<img src="img4/1.png" alt="" />
+			<p>Automate and enhance you workflow</p>
+			<div class="btn"><a href="javascript:;">Try it now</a></div>
+		</div>
+	</header>
+	<footer>
+		<ul>
+			<li>
+				<h2>Easy to use</h2>
+				<p>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
+			</li>
+			<li>
+				<h2>Efficient</h2>
+				<p>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
+			</li>
+			<li>
+				<h2>High Quality</h2>
+				<p>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
+			</li>
+			<li>
+				<h2>Easy to learn</h2>
+				<p>By preferring code over configuration, gulp keeps things simple and makes complex tasks manageable.</p>
+			</li>
+		</ul>
+	</footer>
+</div>
+</body>
+</html>

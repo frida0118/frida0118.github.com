@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>magnifier</title>
+<style>
+	*{margin:0; padding:0;}
+	body{width:100%; background:url(img/js/bg.png) no-repeat; background-size:100%;}
+	.back{position:absolute; top:40px; left:50px;}
+	#div1{width:300px; height:300px; float:left; position:relative;margin:200px 0 0 400px; }
+	#mask{width:100px; height:100px; background:#759ff1; opacity:0.6; filter:alpha(opacity:60); position:absolute; left:0; top:0; display:none;border-radius:50%;}
+	#div2{width:300px;height:300px; overflow:hidden; display:none;float:left; position:relative; margin:200px 0 0 0; border-radius:50%;}
+	#div2 img{ position:absolute; left:0; top:0; }
+</style>
+<script>
+	window.onload = function(){
+		;(function(){
+			var oDiv1 = document.getElementById('div1');	
+			var oDiv2 = document.getElementById('div2');	
+			var oMask= document.getElementById('mask');	
+			var oImg = oDiv2.children[0];
+			//
+			oDiv1.onmouseenter = function(){
+				oDiv2.style.display = 'block';	
+				oMask.style.display = 'block';	
+			};
+			oDiv1.onmouseleave = function(){
+				oDiv2.style.display = 'none';	
+				oMask.style.display = 'none';	
+			};
+			oDiv1.onmousemove = function(ev){
+				var oEvent = ev||event;
+				var l = oEvent.clientX - oDiv1.offsetLeft-oMask.offsetWidth/2;
+				var t = oEvent.clientY - oDiv1.offsetTop -oMask.offsetHeight/2;
+				
+				if(l<0){
+					l = 0;
+				}else if(l>oDiv1.offsetWidth - oMask.offsetWidth){
+					l = oDiv1.offsetWidth - oMask.offsetWidth;
+				}
+				
+				if(t<0){
+					t = 0;
+				}else if(t>oDiv1.offsetHeight - oMask.offsetHeight){
+					t = oDiv1.offsetHeight - oMask.offsetHeight;
+				}
+				oMask.style.left = l +'px';
+				oMask.style.top = t +'px';
+				oImg.style.left = -l*(oImg.offsetWidth-oDiv2.offsetWidth)/(oDiv1.offsetWidth - oMask.offsetWidth)+'px';
+				oImg.style.top = -t*(oImg.offsetHeight-oDiv2.offsetHeight)/(oDiv1.offsetHeight - oMask.offsetHeight)+'px';
+			};			
+		})();
+
+	};
+</script>
+</head>
+<body>
+	<a href="skill2.html" class="back"><img src="img/js/page3.png" alt="" /></a>
+	<div id="div1">
+    	<img src="img/js/bg_m.png">
+        <span id="mask"></span>
+    </div>
+	<div id="div2">
+    	<img src="img/js/bg_b.png">
+    </div>
+
+</body>
+</html>
