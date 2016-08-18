@@ -1,0 +1,21 @@
+/*header*/
+*{margin:0; padding:0; text-decoration:none; list-style:none;}
+em,i{ font-style:normal;}
+html{font-size:20px;}
+.warp{ width:16rem;}
+.warp header{ width:16rem; height:2.525rem; background:-webkit-linear-gradient(#fff,#ebebeb); position:relative; text-align:center;}
+header .back{ width:3.25rem; height:1.6rem; position:absolute; background:url(../img5/back.png) no-repeat; text-indent:-999999px; background-size:100%; left:0.5rem; top:0.5rem;}
+header .logo{width:9.4rem; height:2.2rem; margin-top:0.175rem; }
+header .classify{width:2.575rem; height:1.575rem; margin-top:0.375rem; }
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,119 @@
+/*header*/
+*{margin:0; padding:0; text-decoration:none; list-style:none;}
+em,i{ font-style:normal;}
+html{font-size:20px;}
+.wrap{ width:16rem;}
+.wrap header{ width:16rem; height:2.525rem; background:-webkit-linear-gradient(#fff,#ebebeb); position:relative; text-align:center;}
+header .back{ width:3.25rem; height:1.6rem; position:absolute; background:url(../img5/back.png) no-repeat; text-indent:-999999px; background-size:100%; left:0.5rem; top:0.5rem;}
+header .logo{width:9.4rem; height:2.2rem; margin-top:0.175rem;}
+
+/*.banner*/
+.banner{width:16rem; height:7.45rem; position:relative; overflow:hidden;}
+.banner ul{position:absolute; width:80rem; height:6.675rem;}
+.banner ul li{float:left; width:16rem; height:6.675rem;}
+.banner ul li img{width:100%;}
+.banner ol{position:absolute; bottom:0; width:2.5rem; left:50%; margin-left:-1.25rem;}
+.banner ol li{float:left; width:0.25rem; height:0.25rem; background:#a9a9a9; border-radius:50%; text-indent:-9999px; margin:0 0.125rem;}
+.banner ol li.active{background:#ff4300;}
+
+/*.menu*/
+.menu{width:16rem; height:9.125rem; }
+.menu ul{margin:0 0.4rem 1.075rem 0.4rem;  width:15.2rem; height:8.05rem;}
+.menu ul li{width:2rem; height:3.025rem; float:left; margin:0 0.9rem; margin-top:1rem;}
+.menu ul li a{width:2rem; height:2rem; display: block;}
+.menu ul li a img{width:100%;height:100%;}
+.menu ul li p{font-family:微软雅黑; font-size:0.6rem; margin-top:0.45rem; text-align:center;}
+
+/*.cont*/
+.cont{width:15rem;}
+.cont .title{width:15rem; height:0.75rem; margin:0.525rem 0.5rem;  line-height:0.75rem;}
+.cont .title h2{font-size:0.65rem; float:left; border-left:0.1rem solid #d51938;font-family:微软雅黑; padding-left:0.5rem;}
+.cont .title .title-s{float:right;margin-left:7.715rem; font-size:0.65rem;font-family:微软雅黑;}
+.cont ul{width:15rem; border-top:0.1rem solid #dcdcdc;margin:0.275rem 0.5rem 0 0.5rem;}
+.cont ul li{width:15rem; height:3rem; margin-top:0.5rem;}
+.cont ul li .num1{float:left; font-size:1.2rem;font-family:微软雅黑; width:1.5rem; height:3rem; background:#e00202;color:#fff; text-align:center; line-height:3rem;}
+.cont ul li .div1{float:left;width:4.5rem; height:3rem; }
+.cont ul li .div1 img{width:100%; height:100%;}
+.cont ul li .right{float:left; width:9rem; height:3rem; background:#f4f4f4;font-size:0.6rem; font-family:微软雅黑;}
+.right .l1{float:left;width:3.75rem; color:#999; padding-left:0.55rem; margin-top:0.55rem;}
+.right .l1 .s1{ line-height: 0.925rem;}
+.right .l1 .s2{ line-height: 0.925rem;}
+.right .l1 em{padding-left:0.65rem;}
+.right .l1 em i{text-decoration:line-through;}
+.right .l2{float:left; padding-left:1.5rem;margin-top:1.025rem; }
+.right .l2 .s3{color:#d51938; font-size:0.8rem;float:left;overflow:hidden;}
+.right .l2 a{width:1rem; height:1rem; float:right;background:url(../img5/corner.png) no-repeat; background-size:100%; margin-top:0.1rem; margin-right:0.5rem;}
+.cont ul li .num2{background:#ff4800;}
+.cont ul li .num3{background:#ff7300;}
+.cont ul li .num4{background:#ff9d00;}
+.cont ul li .num5{background:#ffa800;}
+.cont ul li .num6{background:#ffb400;}
+.cont ul li .num7{background:#ffba00;}
+.cont ul li .num8{background:#fcd000;}
+.cont ul li .num9{background:#ffd719;}
+.cont ul li .num10{background:#ffe152;}
+
+
+/*.content*/
+.content{_width:15.025rem;}
+.content .tar{width:15rem; height:2rem; background:#f5f5f5; margin:0.5rem; font-size:0.7rem; text-align:center; line-height:2rem;font-family:微软雅黑; color:#666;}
+.content .name{width:15.025rem; height:8.8rem; padding-left:0.5rem; }
+.name .left{width:3.75rem; height:8.8rem;float: left;}
+.name .left img{width:100%; height:100%;}
+.name ul{float:left; width:11.275rem; height:8.8rem;}
+.name ul li{ float:left; width:3.725rem; height:2.175rem; text-align:center; line-height:2.175rem; border-top:1px solid #eeeeee;
+	border-left:1px solid #eeeeee;font-family:微软雅黑; font-size:0.65rem;margin-left:-1px;}
+.name ul li.bor{border-right:1px solid #eeeeee;}
+.name ul li.bort{border-bottom:1px solid #eeeeee;}
+.name ul li.color{color:#d51942;}
+
+
+.content2 .tar2{width:15rem; height:2rem; background:#f5f5f5; margin:0.5rem; font-size:0.7rem; text-align:center; line-height:2rem;font-family:微软雅黑; color:#666;}
+.content2 ul{width:15rem; height:4rem; margin-left:0.5rem; margin-top:0.45rem;} 
+.content2 ul li{float:left; width:4.975rem;height:3.95rem; border:1px solid #eeeeee; margin-left:-1px; text-align: center;}
+.content2 ul li.li1{border-left:none;}
+.content2 ul li a{width:0.95rem; height:1.1rem; display:block; margin-left:2.25rem; margin-top:1.1rem;} 
+.content2 ul li a img{width:100%; height:100%;}
+.content2 ul li p{font-size:0.6rem; font-family:微软雅黑; color:#666; margin-top:0.875rem;}
+
+.content3 .div3{width:16rem; height:2.2rem; margin-top:0.7rem; background:#f8f8f8;}
+.content3 .div3 a{float:left; line-height:2.2rem;font-family:微软雅黑; color:#333;font-size:0.7rem;}
+.content3 .div3 .btn1{padding-left:0.75rem;}
+.content3 .div3 .btn2{padding-left:1.2rem;}
+.content3 .div3 .btn3{padding-left:8.15rem;}
+.content3 .div3 .btn4{width:0.425rem; height:0.225rem; padding-left:0.5rem; }
+.content3 .div3 .btn4 img{width:100%; height:100%;}
+
+.content4 .div4{width:16rem; height:8.575rem;background:#eee;}
+.content4 .div4 .ss1{line-height:2.2rem;font-family:微软雅黑; color:#333;font-size:0.7rem;padding-left:5.625rem; margin-top:1.975rem;}
+.content4 .div4 .ss2{line-height:2.2rem;font-family:微软雅黑; color:#333;font-size:0.7rem;}
+.content4 .div4 p{font-size: 0.55rem; font-family:微软雅黑; color:#999; text-align: center;}
+.content4 .div4 .box{width:13rem; height:4.45rem; margin-top:1.2rem;padding-left:1.5rem;}
+.content4 .div4 .box img{width:100%; height:100%; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
